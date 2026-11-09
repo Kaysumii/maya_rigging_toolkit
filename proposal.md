@@ -1,5 +1,4 @@
-# maya_rigging_toolkit
-Final Project
+
 # Maya Rigging Toolkit
 
 ## Repository
