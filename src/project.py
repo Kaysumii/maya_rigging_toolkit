@@ -33,16 +33,19 @@ def create_control():
     print("Controls created successfully!")
 
 def color_control():
+    # Left controls - Blue
     for con in cmds.ls("L_*_CON"):
         shapes = cmds.listRelatives(con, shapes=True)
         if shapes:
             cmds.setAttr(shapes[0] + ".overrideEnabled", 1)
             cmds.setAttr(shapes[0] + ".overrideColor", 6)
+    # Right controls - Red
     for con in cmds.ls("R_*_CON"):
             shapes = cmds.listRelatives(con, shapes=True)
             if shapes:
                 cmds.setAttr(shapes[0] + ".overrideEnabled", 1)
                 cmds.setAttr(shapes[0] + ".overrideColor", 13)
+    # All other controls - Yellow
     for con in cmds.ls("*_CON"):
         if not con.startswith(("L_","R_")):
             shapes = cmds.listRelatives(con, shapes=True)
@@ -66,6 +69,7 @@ def reset_controls():
         return
     for con in sel:
         if con.endswith("_CON"):
+            # reset translation and rotation
             for axis in ["X","Y","Z"]:
                 cmds.setAttr(con +".translate" + axis, 0)
                 cmds.setAttr(con +".rotate" + axis, 0)
