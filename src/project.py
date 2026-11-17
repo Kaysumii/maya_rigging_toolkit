@@ -69,7 +69,7 @@ def reset_controls():
             for axis in ["X","Y","Z"]:
                 cmds.setAttr(con +".translate" + axis, 0)
                 cmds.setAttr(con +".rotate" + axis, 0)
-                cmds.setAttr(con +".scale" + axis, 0)
+                
 
 def main():
     create_control()
