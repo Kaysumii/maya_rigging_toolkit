@@ -17,4 +17,7 @@ def create_control():
         # Match transforms
         cmds.matchTransform(grp, jnt)
     
-        
+        # Constrain the Joint
+        cmds.ParentConstraint(con, jnt)
+
+    print("Controls created successfully!")
