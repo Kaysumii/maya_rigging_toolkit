@@ -32,9 +32,28 @@ def create_control():
 
     print("Controls created successfully!")
 
+def color_control():
+    for con in cmds.ls("L_*_CON"):
+        shapes = cmds.listRelatives(con, shapes=True)
+        if shapes:
+            cmds.setAttr(shapes[0] + ".overrideEnabled", 1)
+            cmds.setAttr(shapes[0] + ".overrideColor", 6)
+    for con in cmds.ls("R_*_CON"):
+            shapes = cmds.listRelatives(con, shapes=True)
+            if shapes:
+                cmds.setAttr(shapes[0] + ".overrideEnabled", 1)
+                cmds.setAttr(shapes[0] + ".overrideColor", 13)
+    for con in cmds.ls("L_*_CON"):
+        if not con.startswith(("L_","R_")):
+            shapes = cmds.listRelatives(con, shapes=True)
+            cmds.setAttr(shapes[0] + ".overrideEnabled", 1)
+            cmds.setAttr(shapes[0] + ".overrideColor", 6)
+
+
+
 def main():
     create_control()
-
+    color_control
 
 if __name__ == "__main__":
     main()
