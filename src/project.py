@@ -59,6 +59,15 @@ def scale_controls(size):
             cmds.scale(size, size, size, each + ".cv[*]", r= True)
 
 def reset_controls():
+    sel = cmds.ls(selection = True, type="transform")
+
+    if not sel:
+        cmds.warning("Please select a control.")
+        return
+    for con in sel:
+        if con.endswith("_CON"):
+            for axis in ["X","Y","Z"]:
+                cmds.setAttr(con +".translate" + axis, 0)
 
 def main():
     create_control()
