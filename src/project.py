@@ -49,7 +49,14 @@ def color_control():
             cmds.setAttr(shapes[0] + ".overrideEnabled", 1)
             cmds.setAttr(shapes[0] + ".overrideColor", 6)
 
-
+def scale_controls(size):
+    sel= cmds.ls(selection = True)
+    if not sel:
+        cmds.warning("Please select a control.")
+        return
+    for each in sel:
+        if each.endswith("_CON"):
+            cmds.scale(size, size, size, each + ".cv[*]", r= True)
 
 def main():
     create_control()
