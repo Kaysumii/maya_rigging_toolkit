@@ -43,7 +43,7 @@ def color_control():
             if shapes:
                 cmds.setAttr(shapes[0] + ".overrideEnabled", 1)
                 cmds.setAttr(shapes[0] + ".overrideColor", 13)
-    for con in cmds.ls("L_*_CON"):
+    for con in cmds.ls("*_CON"):
         if not con.startswith(("L_","R_")):
             shapes = cmds.listRelatives(con, shapes=True)
             cmds.setAttr(shapes[0] + ".overrideEnabled", 1)
