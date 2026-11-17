@@ -68,6 +68,7 @@ def reset_controls():
         if con.endswith("_CON"):
             for axis in ["X","Y","Z"]:
                 cmds.setAttr(con +".translate" + axis, 0)
+                cmds.setAttr(con +".rotate" + axis, 0)
 
 def main():
     create_control()
