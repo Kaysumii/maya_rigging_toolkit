@@ -72,8 +72,13 @@ def reset_controls():
                 
 
 def main():
-    create_control()
-    color_control
+    print("Maya Rigging Toolkit loaded!")
+    print("Available commands:")
+    print("create_control()")
+    print("color_control()")
+    print("scale_controls(1.1)")
+    print("scale_controls(0.9)")
+    print("reset_controls()")
 
 if __name__ == "__main__":
     main()
