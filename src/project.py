@@ -8,6 +8,8 @@ def create_control():
         return
 
     for jnt in selected:
+        # Get the joints short name
+        joint_name = jnt.split("|")[-1]
         # Create a circle
         con = cmds.circle(name = jnt.replace("JNT", "CON"), nr = [1,0,0]) [0]
      
