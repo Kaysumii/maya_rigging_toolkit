@@ -1,7 +1,7 @@
 import maya.cmds as cmds
 
 def create_control():
-    selected = cmds.ls(selection=True, type="joint")
+    selected = cmds.ls(selection=True, type="joint", long=True)
 
     if not selected:
         cmds.warning("Please select at least one joint.")
