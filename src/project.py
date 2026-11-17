@@ -47,7 +47,7 @@ def color_control():
         if not con.startswith(("L_","R_")):
             shapes = cmds.listRelatives(con, shapes=True)
             cmds.setAttr(shapes[0] + ".overrideEnabled", 1)
-            cmds.setAttr(shapes[0] + ".overrideColor", 6)
+            cmds.setAttr(shapes[0] + ".overrideColor", 17)
 
 def scale_controls(size):
     sel= cmds.ls(selection = True)
