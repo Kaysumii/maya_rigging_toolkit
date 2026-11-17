@@ -21,3 +21,10 @@ def create_control():
         cmds.ParentConstraint(con, jnt)
 
     print("Controls created successfully!")
+
+def main():
+    create_control()
+
+
+if __name__ == "__main__":
+    main()
