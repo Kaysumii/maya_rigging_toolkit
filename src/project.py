@@ -8,13 +8,21 @@ def create_control():
         return
 
     for jnt in selected:
-        # Get the joints short name
+        # Get the joints name
         joint_name = jnt.split("|")[-1]
+
+        # remove the joint suffix
+        base_name = joint_name.replace("_JNT","")
+
+        # Name the control and group
+        control_name = base_name + "_CON"
+        group_name = base_name + '_GRP'
+
         # Create a circle
-        con = cmds.circle(name = jnt.replace("JNT", "CON"), nr = [1,0,0]) [0]
+        con = cmds.circle(name = control_name, nr = [1,0,0]) [0]
      
         # Group the Circle
-        grp = cmds.group(con)
+        grp = cmds.group(con, name= group_name)
 
         # Match transforms
         cmds.matchTransform(grp, jnt)
