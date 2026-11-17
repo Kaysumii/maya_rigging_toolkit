@@ -58,6 +58,8 @@ def scale_controls(size):
         if each.endswith("_CON"):
             cmds.scale(size, size, size, each + ".cv[*]", r= True)
 
+def reset_controls():
+
 def main():
     create_control()
     color_control
