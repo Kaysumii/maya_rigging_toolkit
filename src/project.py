@@ -10,4 +10,11 @@ def create_control():
     for jnt in selected:
         # Create a circle
         con = cmds.circle(name = jnt.replace("JNT", "CON"), nr = [1,0,0]) [0]
+     
+        # Group the Circle
+        grp = cmds.group(con)
+
+        # Match transforms
+        cmds.matchTransform(grp, jnt)
     
+        
