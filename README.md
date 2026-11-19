@@ -12,7 +12,7 @@ Optional: Users may set up this script as hotkeys in their rigging toolbar, so t
 
 ## Project Links
 
-**Demonstration Video:** [Add YouTube video URL]
+**Demonstration Video:** [https://youtu.be/JX8DMVFQU_0?si=7D66l0vjjLBTb1xI]
 
 **GitHub Repository:** [https://github.com/Kaysumii/maya_rigging_toolkit]
 
